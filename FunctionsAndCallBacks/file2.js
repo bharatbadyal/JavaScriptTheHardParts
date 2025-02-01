@@ -16,3 +16,15 @@ console.log(numSquare(15));
 
 // Higher order function follow this same principle.
 // -- We may not want too decide exactly what some of our functionalty is until we run our function.
+
+function copyArrayMultiplyBy2(array) {
+  const output = [];
+  for (let i = 0; i < array.length; i++) {
+    output.push(array[i] * 2);
+  }
+  return output;
+}
+
+const myArray = [1, 2, 3];
+const result = copyArrayMultiplyBy2(myArray);
+console.log(result);
