@@ -44,3 +44,10 @@ function multipleBy2(input) {
 }
 const result2 = copyArrayAndManipulate([1, 2, 3, 4], multipleBy2);
 console.log(result2);
+
+// HOW WAS THIS POSSIBLE?
+// Function in JavaScript = first Class objects
+// They can co-exist with and can treated like any other javascript object
+// 1. Assigned to variables and properties of other objects
+// 2. Passed as an argument into functions
+// 3. Returned as values from functions
