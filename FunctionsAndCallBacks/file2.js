@@ -28,3 +28,19 @@ function copyArrayMultiplyBy2(array) {
 const myArray = [1, 2, 3];
 const result = copyArrayMultiplyBy2(myArray);
 console.log(result);
+
+// We could generalize our funciton  - so we pass in our specific Instruction only when we run copyArrayAndManipulate!
+
+function copyArrayAndManipulate(array, instructions) {
+  const output = [];
+  for (let i = 0; i < array.length; i++) {
+    output.push(instructions(array[i]));
+  }
+  return output;
+}
+
+function multipleBy2(input) {
+  return input * 2;
+}
+const result2 = copyArrayAndManipulate([1, 2, 3, 4], multipleBy2);
+console.log(result2);
