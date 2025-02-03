@@ -51,3 +51,15 @@ console.log(result2);
 // 1. Assigned to variables and properties of other objects
 // 2. Passed as an argument into functions
 // 3. Returned as values from functions
+
+function operation(num) {
+  return num + num;
+}
+
+function doOperation(num, operation) {
+  let result = operation(num);
+  return result;
+}
+
+let opRes = doOperation(112, operation);
+console.log(opRes);
