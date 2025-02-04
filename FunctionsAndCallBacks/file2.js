@@ -63,3 +63,12 @@ function doOperation(num, operation) {
 
 let opRes = doOperation(112, operation);
 console.log(opRes);
+
+let randomNum = 2323;
+let sign = "+";
+
+switch (sign) {
+  case "+":
+    console.log("Sum of Random Number: ", randomNum + randomNum);
+    break;
+}
