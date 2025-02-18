@@ -19,3 +19,18 @@ let array2 = [5, 6, 7, 8];
 // Call the function and log the result
 let sumArray = addArrays(array1, array2);
 console.log(sumArray);
+
+// Basic addition program in JavaScript
+
+// Function to add two numbers
+function addNumbers(num1, num2) {
+  return num1 + num2;
+}
+
+// Example usage
+let number1 = 5;
+let number2 = 10;
+
+let result = addNumbers(number1, number2);
+
+console.log("The sum of " + number1 + " and " + number2 + " is: " + result);
