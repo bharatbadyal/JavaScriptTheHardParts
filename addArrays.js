@@ -34,3 +34,21 @@ let number2 = 10;
 let result = addNumbers(number1, number2);
 
 console.log("The sum of " + number1 + " and " + number2 + " is: " + result);
+
+function isPrime(num) {
+  if (num <= 1) {
+    return false; // Numbers less than or equal to 1 are not prime
+  }
+
+  for (let i = 2; i <= Math.sqrt(num); i++) {
+    if (num % i === 0) {
+      return false; // If num is divisible by any number other than 1 and itself, it's not prime
+    }
+  }
+
+  return true; // If no divisors were found, the number is prime
+}
+
+// Example usage
+console.log(isPrime(11)); // true
+console.log(isPrime(15)); // false
