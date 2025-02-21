@@ -75,3 +75,31 @@ function findPrimes(limit) {
 
 // Example usage: find primes up to 100
 findPrimes(100);
+
+// A function that returns a promise
+function fetchData() {
+  return new Promise((resolve, reject) => {
+    // Simulate an async operation (like fetching data)
+    setTimeout(() => {
+      const success = true; // Change this to false to test error handling
+
+      if (success) {
+        resolve("Data fetched successfully!"); // Resolve with success message
+      } else {
+        reject("Failed to fetch data."); // Reject with an error message
+      }
+    }, 2000); // Simulate a 2-second delay
+  });
+}
+
+// Call the fetchData function and handle the promise
+fetchData()
+  .then((result) => {
+    console.log(result); // If resolved, log the success message
+  })
+  .catch((error) => {
+    console.error(error); // If rejected, log the error message
+  })
+  .finally(() => {
+    console.log("Promise operation is complete.");
+  });
