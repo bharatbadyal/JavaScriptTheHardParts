@@ -123,14 +123,14 @@ if (isPalindrome(input)) {
 
 // Function to reverse an array
 function reverseArray(arr) {
-    let reversedArr = [];
-    
-    // Loop through the array in reverse order and push elements into the new array
-    for (let i = arr.length - 1; i >= 0; i--) {
-        reversedArr.push(arr[i]);
-    }
-    
-    return reversedArr;
+  let reversedArr = [];
+
+  // Loop through the array in reverse order and push elements into the new array
+  for (let i = arr.length - 1; i >= 0; i--) {
+    reversedArr.push(arr[i]);
+  }
+
+  return reversedArr;
 }
 
 // Example usage
@@ -138,3 +138,13 @@ let myArray = [1, 2, 3, 4, 5];
 console.log("Original array:", myArray);
 let reversed = reverseArray(myArray);
 console.log("Reversed array:", reversed);
+
+// Generate a random number between 0 and 1
+let randomNum = Math.random();
+console.log(randomNum);
+
+// If you want to generate a random number between a range, for example, between 1 and 100:
+let min = 1;
+let max = 100;
+let randomInRange = Math.floor(Math.random() * (max - min + 1)) + min;
+console.log(randomInRange);
