@@ -19,3 +19,63 @@ let reversedArray = reverseArray(originalArray);
 // Output the result
 console.log("Original Array:", originalArray);
 console.log("Reversed Array:", reversedArray);
+
+
+// Define the Node class
+class Node {
+  constructor(data) {
+      this.data = data;
+      this.next = null;
+  }
+}
+
+// Define the LinkedList class
+class LinkedList {
+  constructor() {
+      this.head = null;
+  }
+
+  // Add a node at the end
+  append(data) {
+      let newNode = new Node(data);
+
+      // If the list is empty, make the new node the head
+      if (this.head === null) {
+          this.head = newNode;
+      } else {
+          let current = this.head;
+
+          // Traverse to the last node
+          while (current.next !== null) {
+              current = current.next;
+          }
+
+          // Set the next of the last node to the new node
+          current.next = newNode;
+      }
+  }
+
+  // Display the linked list
+  display() {
+      let current = this.head;
+      let output = '';
+
+      // Traverse and collect data from each node
+      while (current !== null) {
+          output += current.data + ' -> ';
+          current = current.next;
+      }
+
+      console.log(output + 'null');
+  }
+}
+
+// Create a new linked list and add some nodes
+let list = new LinkedList();
+list.append(10);
+list.append(20);
+list.append(30);
+list.append(40);
+
+// Display the linked list
+list.display();
