@@ -99,3 +99,26 @@ function bubbleSort(arr) {
 // Example usage
 let numbers = [64, 34, 25, 12, 22, 11, 90];
 console.log("Sorted array:", bubbleSort(numbers));
+
+function insertionSort(arr) {
+    for (let i = 1; i < arr.length; i++) {
+        let key = arr[i];
+        let j = i - 1;
+
+        // Move elements of arr[0..i-1], that are greater than key, to one position ahead
+        while (j >= 0 && arr[j] > key) {
+            arr[j + 1] = arr[j];
+            j = j - 1;
+        }
+
+        // Insert the key into the correct position
+        arr[j + 1] = key;
+    }
+    return arr;
+}
+
+// Example usage:
+let arr = [12, 11, 13, 5, 6];
+console.log("Original Array:", arr);
+arr = insertionSort(arr);
+console.log("Sorted Array:", arr);
