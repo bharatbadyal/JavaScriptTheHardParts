@@ -101,20 +101,20 @@ let numbers = [64, 34, 25, 12, 22, 11, 90];
 console.log("Sorted array:", bubbleSort(numbers));
 
 function insertionSort(arr) {
-    for (let i = 1; i < arr.length; i++) {
-        let key = arr[i];
-        let j = i - 1;
+  for (let i = 1; i < arr.length; i++) {
+    let key = arr[i];
+    let j = i - 1;
 
-        // Move elements of arr[0..i-1], that are greater than key, to one position ahead
-        while (j >= 0 && arr[j] > key) {
-            arr[j + 1] = arr[j];
-            j = j - 1;
-        }
-
-        // Insert the key into the correct position
-        arr[j + 1] = key;
+    // Move elements of arr[0..i-1], that are greater than key, to one position ahead
+    while (j >= 0 && arr[j] > key) {
+      arr[j + 1] = arr[j];
+      j = j - 1;
     }
-    return arr;
+
+    // Insert the key into the correct position
+    arr[j + 1] = key;
+  }
+  return arr;
 }
 
 // Example usage:
@@ -122,3 +122,55 @@ let arr = [12, 11, 13, 5, 6];
 console.log("Original Array:", arr);
 arr = insertionSort(arr);
 console.log("Sorted Array:", arr);
+// Bubble Sort
+function bubbleSort(arr) {
+  let n = arr.length;
+  for (let i = 0; i < n - 1; i++) {
+    for (let j = 0; j < n - i - 1; j++) {
+      if (arr[j] > arr[j + 1]) {
+        // Swap
+        [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]];
+      }
+    }
+  }
+  return arr;
+}
+
+// Selection Sort
+function selectionSort(arr) {
+  let n = arr.length;
+  for (let i = 0; i < n - 1; i++) {
+    let minIndex = i;
+    for (let j = i + 1; j < n; j++) {
+      if (arr[j] < arr[minIndex]) {
+        minIndex = j;
+      }
+    }
+    // Swap
+    [arr[i], arr[minIndex]] = [arr[minIndex], arr[i]];
+  }
+  return arr;
+}
+
+// Insertion Sort
+function insertionSort(arr) {
+  let n = arr.length;
+  for (let i = 1; i < n; i++) {
+    let key = arr[i];
+    let j = i - 1;
+    while (j >= 0 && arr[j] > key) {
+      arr[j + 1] = arr[j];
+      j--;
+    }
+    arr[j + 1] = key;
+  }
+  return arr;
+}
+
+// Testing the sorting functions
+let array = [64, 25, 12, 22, 11];
+
+console.log("Original Array:", [...array]);
+console.log("Bubble Sort:", bubbleSort([...array]));
+console.log("Selection Sort:", selectionSort([...array]));
+console.log("Insertion Sort:", insertionSort([...array]));
