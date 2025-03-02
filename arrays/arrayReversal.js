@@ -174,3 +174,25 @@ console.log("Original Array:", [...array]);
 console.log("Bubble Sort:", bubbleSort([...array]));
 console.log("Selection Sort:", selectionSort([...array]));
 console.log("Insertion Sort:", insertionSort([...array]));
+
+// Function to calculate percentage
+function calculatePercentage(marks, totalMarks) {
+    // Calculate total marks obtained
+    let totalObtained = marks.reduce((acc, mark) => acc + mark, 0);
+    
+    // Calculate the total maximum marks
+    let totalMaxMarks = totalMarks * marks.length;
+
+    // Calculate percentage
+    let percentage = (totalObtained / totalMaxMarks) * 100;
+    
+    return percentage;
+}
+
+// Example usage
+let marks = [85, 90, 78, 88]; // Marks obtained in different subjects
+let totalMarksPerSubject = 100; // Maximum marks per subject
+
+let percentage = calculatePercentage(marks, totalMarksPerSubject);
+
+console.log(`The percentage is: ${percentage.toFixed(2)}%`);
