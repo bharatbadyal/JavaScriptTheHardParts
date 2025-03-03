@@ -196,3 +196,11 @@ let totalMarksPerSubject = 100; // Maximum marks per subject
 let percentage = calculatePercentage(marks, totalMarksPerSubject);
 
 console.log(`The percentage is: ${percentage.toFixed(2)}%`);
+
+function reverseString(str) {
+  return str.split('').reverse().join('');
+}
+
+const originalString = "hello";
+const reversedString = reverseString(originalString);
+console.log(reversedString); // Output: "olleh"
