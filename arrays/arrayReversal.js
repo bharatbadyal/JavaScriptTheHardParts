@@ -177,16 +177,16 @@ console.log("Insertion Sort:", insertionSort([...array]));
 
 // Function to calculate percentage
 function calculatePercentage(marks, totalMarks) {
-    // Calculate total marks obtained
-    let totalObtained = marks.reduce((acc, mark) => acc + mark, 0);
-    
-    // Calculate the total maximum marks
-    let totalMaxMarks = totalMarks * marks.length;
+  // Calculate total marks obtained
+  let totalObtained = marks.reduce((acc, mark) => acc + mark, 0);
 
-    // Calculate percentage
-    let percentage = (totalObtained / totalMaxMarks) * 100;
-    
-    return percentage;
+  // Calculate the total maximum marks
+  let totalMaxMarks = totalMarks * marks.length;
+
+  // Calculate percentage
+  let percentage = (totalObtained / totalMaxMarks) * 100;
+
+  return percentage;
 }
 
 // Example usage
@@ -198,9 +198,35 @@ let percentage = calculatePercentage(marks, totalMarksPerSubject);
 console.log(`The percentage is: ${percentage.toFixed(2)}%`);
 
 function reverseString(str) {
-  return str.split('').reverse().join('');
+  return str.split("").reverse().join("");
 }
 
 const originalString = "hello";
 const reversedString = reverseString(originalString);
 console.log(reversedString); // Output: "olleh"
+
+function isPrime(num) {
+  // Check if number is less than 2, as 0 and 1 are not prime
+  if (num <= 1) {
+    return false;
+  }
+
+  // Loop from 2 to the square root of the number
+  for (let i = 2; i <= Math.sqrt(num); i++) {
+    // If num is divisible by i, it's not prime
+    if (num % i === 0) {
+      return false;
+    }
+  }
+
+  // If no divisor was found, it's prime
+  return true;
+}
+
+// Test the function
+let number = 29;
+if (isPrime(number)) {
+  console.log(`${number} is a prime number.`);
+} else {
+  console.log(`${number} is not a prime number.`);
+}
