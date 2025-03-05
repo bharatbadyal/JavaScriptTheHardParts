@@ -230,3 +230,13 @@ if (isPrime(number)) {
 } else {
   console.log(`${number} is not a prime number.`);
 }
+
+function countCharacters(str) {
+  return str.length;
+}
+
+// Example usage
+const inputString = "Hello, world!";
+const characterCount = countCharacters(inputString);
+
+console.log("Number of characters:", characterCount);
