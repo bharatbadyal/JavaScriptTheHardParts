@@ -240,3 +240,26 @@ const inputString = "Hello, world!";
 const characterCount = countCharacters(inputString);
 
 console.log("Number of characters:", characterCount);
+// A function that returns a Promise
+function fetchData() {
+  return new Promise((resolve, reject) => {
+    const dataAvailable = true; // You can change this to false to simulate an error.
+
+    setTimeout(() => {
+      if (dataAvailable) {
+        resolve("Data fetched successfully!"); // This will resolve the promise
+      } else {
+        reject("Error: Data not found!"); // This will reject the promise
+      }
+    }, 2000); // Simulating a delay of 2 seconds
+  });
+}
+
+// Using the promise
+fetchData()
+  .then((message) => {
+    console.log(message); // This will run if the promise is resolved
+  })
+  .catch((error) => {
+    console.log(error); // This will run if the promise is rejected
+  });
