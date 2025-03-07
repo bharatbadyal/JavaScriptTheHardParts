@@ -263,3 +263,21 @@ fetchData()
   .catch((error) => {
     console.log(error); // This will run if the promise is rejected
   });
+// Function to count characters in an array of strings
+function countCharacters(arr) {
+  let charCount = 0;
+  
+  // Loop through each string in the array
+  for (let i = 0; i < arr.length; i++) {
+    charCount += arr[i].length;  // Add the length of each string
+  }
+  
+  return charCount;
+}
+
+// Example array of strings
+const myArray = ['apple', 'banana', 'cherry'];
+
+// Call the function and print the result
+const totalCharacters = countCharacters(myArray);
+console.log('Total characters in array:', totalCharacters);
