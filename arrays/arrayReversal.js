@@ -266,18 +266,67 @@ fetchData()
 // Function to count characters in an array of strings
 function countCharacters(arr) {
   let charCount = 0;
-  
+
   // Loop through each string in the array
   for (let i = 0; i < arr.length; i++) {
-    charCount += arr[i].length;  // Add the length of each string
+    charCount += arr[i].length; // Add the length of each string
   }
-  
+
   return charCount;
 }
 
 // Example array of strings
-const myArray = ['apple', 'banana', 'cherry'];
+const myArray = ["apple", "banana", "cherry"];
 
 // Call the function and print the result
 const totalCharacters = countCharacters(myArray);
-console.log('Total characters in array:', totalCharacters);
+console.log("Total characters in array:", totalCharacters);
+
+// Basic Bit Manipulation in JavaScript
+
+// Function to perform AND operation
+function bitwiseAND(a, b) {
+  return a & b;
+}
+
+// Function to perform OR operation
+function bitwiseOR(a, b) {
+  return a | b;
+}
+
+// Function to perform XOR operation
+function bitwiseXOR(a, b) {
+  return a ^ b;
+}
+
+// Function to perform Left Shift
+function leftShift(a, n) {
+  return a << n;
+}
+
+// Function to perform Right Shift
+function rightShift(a, n) {
+  return a >> n;
+}
+
+// Function to toggle a bit at a given position
+function toggleBit(num, pos) {
+  return num ^ (1 << pos);
+}
+
+// Function to check if a bit is set at a given position
+function isBitSet(num, pos) {
+  return (num & (1 << pos)) !== 0;
+}
+
+// Example usage
+let a = 5,
+  b = 3; // 5 = 0101, 3 = 0011
+
+console.log("Bitwise AND:", bitwiseAND(a, b)); // Output: 1  (0001)
+console.log("Bitwise OR:", bitwiseOR(a, b)); // Output: 7  (0111)
+console.log("Bitwise XOR:", bitwiseXOR(a, b)); // Output: 6  (0110)
+console.log("Left Shift 5 by 1:", leftShift(a, 1)); // Output: 10 (1010)
+console.log("Right Shift 5 by 1:", rightShift(a, 1)); // Output: 2 (0010)
+console.log("Toggle bit at position 1 in 5:", toggleBit(a, 1)); // Output: 7 (0111)
+console.log("Is bit set at position 2 in 5?", isBitSet(a, 2)); // Output: true
