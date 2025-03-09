@@ -330,3 +330,44 @@ console.log("Left Shift 5 by 1:", leftShift(a, 1)); // Output: 10 (1010)
 console.log("Right Shift 5 by 1:", rightShift(a, 1)); // Output: 2 (0010)
 console.log("Toggle bit at position 1 in 5:", toggleBit(a, 1)); // Output: 7 (0111)
 console.log("Is bit set at position 2 in 5?", isBitSet(a, 2)); // Output: true
+
+// Coersion
+// Example 1: Coercion in arithmetic operations
+let num = 10;
+let str = "5";
+
+let result = num + str; // Coercion happens here: number 10 is coerced to string "10"
+console.log(result); // Output: "105" (string concatenation)
+
+// Example 2: Coercion in logical operations
+let truthyValue = "hello"; // A non-empty string is truthy
+let falsyValue = 0; // 0 is falsy
+
+console.log(truthyValue && falsyValue); // Coercion happens: 0 is considered falsy, so output is 0
+console.log(truthyValue || falsyValue); // Coercion happens: "hello" is truthy, so output is "hello"
+
+// Example 3: Coercion in comparison
+let x = 5;
+let y = "5";
+
+console.log(x == y); // Coercion happens: string "5" is coerced to number 5, output is true
+console.log(x === y); // No coercion: different types (number vs string), output is false
+
+// Example 4: Coercion when using a boolean context
+let value = "hello"; // Non-empty string is truthy
+console.log(Boolean(value)); // Coercion: value is converted to true
+
+let emptyValue = "";
+console.log(Boolean(emptyValue)); // Coercion: empty string is converted to false
+
+// Example 5: Coercion when using Number(), String(), and Boolean()
+let number = "123"; // String
+let coercedToNumber = Number(number); // Coercion from string to number
+console.log(coercedToNumber); // Output: 123 (as a number)
+
+let booleanValue = 0; // Number
+let coercedToBoolean = Boolean(booleanValue); // Coercion from number to boolean
+console.log(coercedToBoolean); // Output: false (0 is falsy)
+
+let coercedToString = String(coercedToNumber); // Coercion from number to string
+console.log(coercedToString); // Output: "123" (as a string)
