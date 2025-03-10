@@ -371,3 +371,49 @@ console.log(coercedToBoolean); // Output: false (0 is falsy)
 
 let coercedToString = String(coercedToNumber); // Coercion from number to string
 console.log(coercedToString); // Output: "123" (as a string)
+
+// Hoisting with Function Declarations
+function testHoisting() {
+  console.log("Function Hoisting Example:");
+
+  // Variable Hoisting with var
+  console.log(myVar); // undefined due to hoisting
+  var myVar = "This is a hoisted variable";
+  console.log(myVar); // prints: "This is a hoisted variable"
+
+  // Function Hoisting with Function Declaration
+  hoistedFunction(); // works because function declarations are hoisted
+  function hoistedFunction() {
+    console.log("This function is hoisted!");
+  }
+
+  // Hoisting with let/const
+  try {
+    console.log(myLet); // ReferenceError: Cannot access 'myLet' before initialization
+  } catch (error) {
+    console.log(error.message);
+  }
+
+  // Let/Const variables are hoisted but not initialized
+  let myLet = "This is a hoisted let variable";
+  const myConst = "This is a hoisted const variable";
+
+  console.log(myLet); // works after initialization
+  console.log(myConst); // works after initialization
+
+  // Function Expression hoisting
+  try {
+    myFunc(); // TypeError: myFunc is not a function
+  } catch (error) {
+    console.log(error.message);
+  }
+
+  var myFunc = function () {
+    console.log("This is a function expression.");
+  };
+
+  myFunc(); // Works now because the function expression is assigned after execution
+}
+
+// Call the function to test hoisting
+testHoisting();
