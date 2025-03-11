@@ -417,3 +417,21 @@ function testHoisting() {
 
 // Call the function to test hoisting
 testHoisting();
+// A simple function that accepts a callback
+function fetchData(callback) {
+  console.log("Fetching data...");
+  setTimeout(() => {
+    const data = { name: "John", age: 30 };
+    console.log("Data fetched successfully!");
+    callback(data); // Call the callback function with the data
+  }, 2000);
+}
+
+// A callback function that processes the fetched data
+function processData(data) {
+  console.log("Processing data...");
+  console.log(`Name: ${data.name}, Age: ${data.age}`);
+}
+
+// Calling the fetchData function and passing the processData function as a callback
+fetchData(processData);
