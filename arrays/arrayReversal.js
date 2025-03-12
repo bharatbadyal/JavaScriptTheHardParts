@@ -435,3 +435,43 @@ function processData(data) {
 
 // Calling the fetchData function and passing the processData function as a callback
 fetchData(processData);
+
+// 1. Encapsulation: Grouping related data and methods into a class
+class Animal {
+    constructor(name, sound) {
+        this.name = name;  // property
+        this.sound = sound;  // property
+    }
+
+    makeSound() {
+        console.log(`${this.name} says ${this.sound}`);
+    }
+}
+
+// 2. Inheritance: Creating a subclass that inherits from Animal
+class Dog extends Animal {
+    constructor(name, sound, breed) {
+        super(name, sound);  // Calls the parent class (Animal) constructor
+        this.breed = breed;  // additional property
+    }
+
+    // 3. Polymorphism: Overriding the method from Animal class
+    makeSound() {
+        console.log(`${this.name} barks!`);
+    }
+
+    // Extra method specific to Dog class
+    fetch() {
+        console.log(`${this.name} is fetching the ball!`);
+    }
+}
+
+// Create an instance of Animal
+const genericAnimal = new Animal('Generic Animal', 'Some sound');
+genericAnimal.makeSound();  // Outputs: Generic Animal says Some sound
+
+// Create an instance of Dog (which inherits from Animal)
+const dog = new Dog('Buddy', 'Woof', 'Golden Retriever');
+dog.makeSound();  // Outputs: Buddy barks!
+dog.fetch();  // Outputs: Buddy is fetching the ball!
+
