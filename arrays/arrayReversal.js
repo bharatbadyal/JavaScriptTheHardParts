@@ -438,40 +438,77 @@ fetchData(processData);
 
 // 1. Encapsulation: Grouping related data and methods into a class
 class Animal {
-    constructor(name, sound) {
-        this.name = name;  // property
-        this.sound = sound;  // property
-    }
+  constructor(name, sound) {
+    this.name = name; // property
+    this.sound = sound; // property
+  }
 
-    makeSound() {
-        console.log(`${this.name} says ${this.sound}`);
-    }
+  makeSound() {
+    console.log(`${this.name} says ${this.sound}`);
+  }
 }
 
 // 2. Inheritance: Creating a subclass that inherits from Animal
 class Dog extends Animal {
-    constructor(name, sound, breed) {
-        super(name, sound);  // Calls the parent class (Animal) constructor
-        this.breed = breed;  // additional property
-    }
+  constructor(name, sound, breed) {
+    super(name, sound); // Calls the parent class (Animal) constructor
+    this.breed = breed; // additional property
+  }
 
-    // 3. Polymorphism: Overriding the method from Animal class
-    makeSound() {
-        console.log(`${this.name} barks!`);
-    }
+  // 3. Polymorphism: Overriding the method from Animal class
+  makeSound() {
+    console.log(`${this.name} barks!`);
+  }
 
-    // Extra method specific to Dog class
-    fetch() {
-        console.log(`${this.name} is fetching the ball!`);
-    }
+  // Extra method specific to Dog class
+  fetch() {
+    console.log(`${this.name} is fetching the ball!`);
+  }
 }
 
 // Create an instance of Animal
-const genericAnimal = new Animal('Generic Animal', 'Some sound');
-genericAnimal.makeSound();  // Outputs: Generic Animal says Some sound
+const genericAnimal = new Animal("Generic Animal", "Some sound");
+genericAnimal.makeSound(); // Outputs: Generic Animal says Some sound
 
 // Create an instance of Dog (which inherits from Animal)
-const dog = new Dog('Buddy', 'Woof', 'Golden Retriever');
-dog.makeSound();  // Outputs: Buddy barks!
-dog.fetch();  // Outputs: Buddy is fetching the ball!
+const dog = new Dog("Buddy", "Woof", "Golden Retriever");
+dog.makeSound(); // Outputs: Buddy barks!
+dog.fetch(); // Outputs: Buddy is fetching the ball!
 
+// 1. Variables and Data Types
+let name = "Alice"; // String
+let age = 25; // Number
+let isStudent = true; // Boolean
+
+// 2. Control Structures (Conditionals and Loops)
+if (age >= 18) {
+  console.log(name + " is an adult.");
+} else {
+  console.log(name + " is not an adult.");
+}
+
+// 3. Functions
+function greetPerson(personName) {
+  console.log("Hello, " + personName + "!");
+}
+
+greetPerson(name); // Call the function with the 'name' variable
+
+// 4. Objects and Arrays
+let person = {
+  name: "Alice",
+  age: 25,
+  isStudent: true,
+  greet: function () {
+    console.log("Hello, my name is " + this.name);
+  },
+};
+
+person.greet(); // Using the method inside the object
+
+let numbers = [1, 2, 3, 4, 5]; // Array
+
+// Looping through an array and printing each value
+for (let i = 0; i < numbers.length; i++) {
+  console.log(numbers[i]);
+}
