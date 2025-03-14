@@ -512,3 +512,33 @@ let numbers = [1, 2, 3, 4, 5]; // Array
 for (let i = 0; i < numbers.length; i++) {
   console.log(numbers[i]);
 }
+// Function to multiply all elements in the array
+function multiplyArray(arr) {
+  return arr.reduce((acc, num) => acc * num, 1); // Multiplying all elements
+}
+
+// Function to calculate the sum of the array
+function sumArray(arr) {
+  return arr.reduce((acc, num) => acc + num, 0); // Summing all elements
+}
+
+// Function to calculate percentage of the product relative to the sum
+function calculatePercentage(arr) {
+  const product = multiplyArray(arr);
+  const sum = sumArray(arr);
+  if (sum === 0) {
+    return "Sum is 0, percentage calculation not possible!";
+  }
+  return (product / sum) * 100; // Percentage of the product relative to the sum
+}
+
+// Example usage:
+const arr = [2, 4, 6, 8]; // Given array
+const percentage = calculatePercentage(arr);
+
+console.log("Product of array elements:", multiplyArray(arr));
+console.log("Sum of array elements:", sumArray(arr));
+console.log(
+  "Percentage of product relative to sum:",
+  percentage.toFixed(2) + "%"
+);
