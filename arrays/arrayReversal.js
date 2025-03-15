@@ -542,3 +542,31 @@ console.log(
   "Percentage of product relative to sum:",
   percentage.toFixed(2) + "%"
 );
+// Implicit Type Conversion in JavaScript
+
+// Example 1: Number + String
+let num = 5;
+let str = "10";
+
+let result = num + str; // Implicit conversion of number to string
+console.log(result); // Outputs: "510" (string)
+
+
+// Example 2: String - Number
+let result2 = str - num; // Implicit conversion of string to number
+console.log(result2); // Outputs: 5 (number)
+
+
+// Example 3: Boolean + Number
+let bool = true;
+let num2 = 3;
+
+let result3 = bool + num2; // Implicit conversion of boolean to number (true becomes 1)
+console.log(result3); // Outputs: 4 (number)
+
+
+// Example 4: Undefined + String
+let undefinedValue;
+let result4 = undefinedValue + "hello"; // Implicit conversion of undefined to NaN
+console.log(result4); // Outputs: "NaNhello"
+
