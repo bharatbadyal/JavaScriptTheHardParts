@@ -551,11 +551,9 @@ let str = "10";
 let result = num + str; // Implicit conversion of number to string
 console.log(result); // Outputs: "510" (string)
 
-
 // Example 2: String - Number
 let result2 = str - num; // Implicit conversion of string to number
 console.log(result2); // Outputs: 5 (number)
-
 
 // Example 3: Boolean + Number
 let bool = true;
@@ -564,9 +562,52 @@ let num2 = 3;
 let result3 = bool + num2; // Implicit conversion of boolean to number (true becomes 1)
 console.log(result3); // Outputs: 4 (number)
 
-
 // Example 4: Undefined + String
 let undefinedValue;
 let result4 = undefinedValue + "hello"; // Implicit conversion of undefined to NaN
 console.log(result4); // Outputs: "NaNhello"
 
+// Basic String Manipulation in JavaScript
+
+// Define a string
+let str = "  Hello, JavaScript World!  ";
+
+// 1. Trim the whitespace from both ends
+let trimmedStr = str.trim();
+console.log("Trimmed String:", trimmedStr);
+
+// 2. Convert string to uppercase
+let upperStr = str.toUpperCase();
+console.log("Uppercase String:", upperStr);
+
+// 3. Convert string to lowercase
+let lowerStr = str.toLowerCase();
+console.log("Lowercase String:", lowerStr);
+
+// 4. Find the length of the string
+let length = str.length;
+console.log("Length of String:", length);
+
+// 5. Replace part of the string
+let replacedStr = str.replace("JavaScript", "Coding");
+console.log("Replaced String:", replacedStr);
+
+// 6. Extract a substring
+let substring = str.substring(7, 18); // Extract from index 7 to 18
+console.log("Substring:", substring);
+
+// 7. Split the string into an array
+let splitStr = str.split(" ");
+console.log("Split String:", splitStr);
+
+// 8. Check if the string contains a substring
+let containsWord = str.includes("JavaScript");
+console.log("Contains 'JavaScript'?", containsWord);
+
+// 9. Concatenate another string
+let concatStr = str.concat(" Let's learn!");
+console.log("Concatenated String:", concatStr);
+
+// 10. Repeat the string
+let repeatedStr = str.repeat(2);
+console.log("Repeated String:", repeatedStr);
