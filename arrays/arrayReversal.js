@@ -611,3 +611,13 @@ console.log("Concatenated String:", concatStr);
 // 10. Repeat the string
 let repeatedStr = str.repeat(2);
 console.log("Repeated String:", repeatedStr);
+function countCharacters(str) {
+  // Get the length of the string
+  return str.length;
+}
+
+// Example usage:
+const inputString = "Hello, World!";
+const characterCount = countCharacters(inputString);
+
+console.log("Number of characters:", characterCount);
