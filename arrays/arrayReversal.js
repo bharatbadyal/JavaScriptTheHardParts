@@ -621,3 +621,25 @@ const inputString = "Hello, World!";
 const characterCount = countCharacters(inputString);
 
 console.log("Number of characters:", characterCount);
+
+// Declare variables of different types
+let numberVar = 42;
+let stringVar = "Hello, World!";
+let booleanVar = true;
+let objectVar = { name: "John", age: 30 };
+let arrayVar = [1, 2, 3, 4];
+let functionVar = function () {
+  return "I'm a function";
+};
+let undefinedVar;
+let nullVar = null;
+
+// Use typeof to check the type of each variable
+console.log("The type of numberVar is: " + typeof numberVar); // number
+console.log("The type of stringVar is: " + typeof stringVar); // string
+console.log("The type of booleanVar is: " + typeof booleanVar); // boolean
+console.log("The type of objectVar is: " + typeof objectVar); // object
+console.log("The type of arrayVar is: " + typeof arrayVar); // object (arrays are technically objects in JS)
+console.log("The type of functionVar is: " + typeof functionVar); // function
+console.log("The type of undefinedVar is: " + typeof undefinedVar); // undefined
+console.log("The type of nullVar is: " + typeof nullVar); // object (this is a JavaScript quirk)
