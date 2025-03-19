@@ -643,3 +643,15 @@ console.log("The type of arrayVar is: " + typeof arrayVar); // object (arrays ar
 console.log("The type of functionVar is: " + typeof functionVar); // function
 console.log("The type of undefinedVar is: " + typeof undefinedVar); // undefined
 console.log("The type of nullVar is: " + typeof nullVar); // object (this is a JavaScript quirk)
+
+
+console.log(myVar);  // undefined
+var myVar = 10;
+
+function test() {
+    console.log(myVar);  // undefined
+    var myVar = 20;
+    console.log(myVar);  // 20
+}
+
+test();
