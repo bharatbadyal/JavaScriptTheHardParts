@@ -665,18 +665,27 @@ function greet(name) {
 greet("World");
 
 function isPalindrome(str) {
-    // Remove non-alphanumeric characters and convert to lowercase
-    str = str.replace(/[^a-zA-Z0-9]/g, '').toLowerCase();
+  // Remove non-alphanumeric characters and convert to lowercase
+  str = str.replace(/[^a-zA-Z0-9]/g, "").toLowerCase();
 
-    // Check if the string is equal to its reverse
-    let reversedStr = str.split('').reverse().join('');
-    return str === reversedStr;
+  // Check if the string is equal to its reverse
+  let reversedStr = str.split("").reverse().join("");
+  return str === reversedStr;
 }
 
 // Example usage:
 let inputString = "A man, a plan, a canal, Panama!";
 if (isPalindrome(inputString)) {
-    console.log("The string is a palindrome.");
+  console.log("The string is a palindrome.");
 } else {
-    console.log("The string is not a palindrome.");
+  console.log("The string is not a palindrome.");
 }
+// Define two arrays
+const array1 = [1, 2, 3];
+const array2 = [4, 5, 6];
+
+// Concatenate the arrays using the concat() method
+const concatenatedArray = array1.concat(array2);
+
+// Print the result
+console.log("Concatenated Array:", concatenatedArray);
