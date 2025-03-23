@@ -689,3 +689,38 @@ const concatenatedArray = array1.concat(array2);
 
 // Print the result
 console.log("Concatenated Array:", concatenatedArray);
+
+// Function to check if a string is valid JSON
+function isValidJSON(jsonString) {
+  try {
+    JSON.parse(jsonString);
+    return true;
+  } catch (e) {
+    return false;
+  }
+}
+
+// Function to inject JSON into an HTML element
+function injectJSON(jsonString, elementId) {
+  if (isValidJSON(jsonString)) {
+    const jsonObject = JSON.parse(jsonString);
+    const targetElement = document.getElementById(elementId);
+
+    if (targetElement) {
+      // Injecting the JSON object as formatted text
+      targetElement.textContent = JSON.stringify(jsonObject, null, 2);
+    } else {
+      console.error("Target element not found");
+    }
+  } else {
+    console.error("Invalid JSON");
+  }
+}
+
+// Example usage:
+const jsonInput = '{"name": "John", "age": 30, "city": "New York"}';
+const targetElementId = "jsonOutput";
+
+// Assuming there's an HTML element with id="jsonOutput"
+// <pre id="jsonOutput"></pre>
+injectJSON(jsonInput, targetElementId);
