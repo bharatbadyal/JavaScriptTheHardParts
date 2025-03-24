@@ -724,3 +724,59 @@ const targetElementId = "jsonOutput";
 // Assuming there's an HTML element with id="jsonOutput"
 // <pre id="jsonOutput"></pre>
 injectJSON(jsonInput, targetElementId);
+// Define a Node class for the linked list
+class Node {
+  constructor(data) {
+    this.data = data;
+    this.next = null;
+  }
+}
+
+// Define a LinkedList class
+class LinkedList {
+  constructor() {
+    this.head = null;
+  }
+
+  // Method to append a new node at the end of the list
+  append(data) {
+    const newNode = new Node(data);
+    if (this.head === null) {
+      this.head = newNode;
+      return;
+    }
+    let current = this.head;
+    while (current.next !== null) {
+      current = current.next;
+    }
+    current.next = newNode;
+  }
+
+  // Method to display the linked list
+  display() {
+    let current = this.head;
+    let result = "";
+    while (current !== null) {
+      result += current.data + " -> ";
+      current = current.next;
+    }
+    result += "null";
+    console.log(result);
+  }
+}
+
+// Function to convert an array to a linked list
+function arrayToLinkedList(arr) {
+  const linkedList = new LinkedList();
+  for (let i = 0; i < arr.length; i++) {
+    linkedList.append(arr[i]);
+  }
+  return linkedList;
+}
+
+// Example usage
+const array = [1, 2, 3, 4, 5];
+const linkedList = arrayToLinkedList(array);
+
+// Display the linked list
+linkedList.display();
