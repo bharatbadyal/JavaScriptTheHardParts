@@ -780,3 +780,23 @@ const linkedList = arrayToLinkedList(array);
 
 // Display the linked list
 linkedList.display();
+
+// Function to multiply array elements by a given number
+function multiplyArrayElements(arr, num) {
+  let alterArray = []; // New array to store results
+
+  // Loop through each element of the array
+  for (let i = 0; i < arr.length; i++) {
+    alterArray.push(arr[i] * num); // Multiply and push the result to alterArray
+  }
+
+  return alterArray;
+}
+
+// Example usage
+let originalArray = [1, 2, 3, 4, 5];
+let multiplier = 2;
+let result = multiplyArrayElements(originalArray, multiplier);
+
+console.log("Original Array:", originalArray);
+console.log("Altered Array:", result);
