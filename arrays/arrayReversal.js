@@ -800,3 +800,84 @@ let result = multiplyArrayElements(originalArray, multiplier);
 
 console.log("Original Array:", originalArray);
 console.log("Altered Array:", result);
+
+class Node {
+  constructor(data) {
+    this.data = data;
+    this.next = null;
+  }
+}
+
+class LinkedList {
+  constructor() {
+    this.head = null;
+  }
+
+  // Method to add a new node at the end of the list
+  append(data) {
+    const newNode = new Node(data);
+    if (this.head === null) {
+      this.head = newNode;
+    } else {
+      let current = this.head;
+      while (current.next) {
+        current = current.next;
+      }
+      current.next = newNode;
+    }
+  }
+
+  // Method to print the list (for debugging purposes)
+  print() {
+    let current = this.head;
+    while (current) {
+      console.log(current.data);
+      current = current.next;
+    }
+  }
+
+  // Method to concatenate another linked list
+  concatenate(otherList) {
+    if (!this.head) {
+      this.head = otherList.head;
+      return;
+    }
+
+    let current = this.head;
+    while (current.next) {
+      current = current.next;
+    }
+
+    current.next = otherList.head;
+  }
+}
+
+// Example usage:
+
+let list1 = new LinkedList();
+list1.append(1);
+list1.append(2);
+list1.append(3);
+
+let list2 = new LinkedList();
+list2.append(4);
+list2.append(5);
+
+let list3 = new LinkedList();
+list3.append(6);
+
+console.log("List 1:");
+list1.print();
+
+console.log("List 2:");
+list2.print();
+
+console.log("List 3:");
+list3.print();
+
+// Concatenating list2 and list3 to list1
+list1.concatenate(list2);
+list1.concatenate(list3);
+
+console.log("Concatenated List:");
+list1.print();
