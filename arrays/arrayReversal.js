@@ -881,3 +881,23 @@ list1.concatenate(list3);
 
 console.log("Concatenated List:");
 list1.print();
+
+console.log(myVar); // undefined, due to hoisting
+var myVar = 5;
+
+console.log(myVar2); // ReferenceError: Cannot access 'myVar2' before initialization
+let myVar2 = 10;
+
+function testHoisting() {
+  console.log(myFunc); // undefined, hoisted as a function declaration
+  myFunc(); // This will work
+
+  var myFunc = function () {
+    console.log("This is myFunc");
+  };
+
+  // Uncommenting the below line will result in a TypeError because of function expression hoisting:
+  // myFunc(); // TypeError: myFunc is not a function
+}
+
+testHoisting();
